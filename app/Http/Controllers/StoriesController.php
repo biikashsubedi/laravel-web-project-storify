@@ -6,6 +6,7 @@ use App\Events\StoryCreated;
 use App\Events\StoryEdited;
 use App\Mail\NewStoryNotification;
 use App\Story;
+use App\Tag;
 use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoryRequest;
@@ -28,6 +29,7 @@ class StoriesController extends Controller
     public function index()
     {
         $stories = Story::where('user_id', auth()->user()->id)
+            ->with('tags')
             ->orderby('id', 'DESC')
             ->paginate(5);
         return view('stories.index', [
@@ -43,10 +45,12 @@ class StoriesController extends Controller
     public function create()
     {
         $story = new Story;
+        $tags = Tag::get();
 ////        IN CASE YOU HAVE NOT CONSTRUCT FUNCTION THIS ALSO WORK
 //        $this->authorize('create');
         return view('stories.create', [
-            'story' => $story
+            'story' => $story,
+            'tags' => $tags,
         ]);
     }
 
@@ -65,8 +69,9 @@ class StoriesController extends Controller
         if ($request->hasFile('image')) {
             $this->_uploadimage($request, $story);
         }
+        $story->tags()->sync( $request->tags);
 
-        event(new StoryCreated($story->title));
+//        event(new StoryCreated($story->title));
         return redirect()->route('stories.index')->with('msg', 'Story Created Sucessfully');
     }
 
@@ -79,7 +84,7 @@ class StoriesController extends Controller
     public function show(Story $story)
     {
         return view('stories.show', [
-            'story' => $story
+            'story' => $story,
         ]);
     }
 
@@ -93,8 +98,10 @@ class StoriesController extends Controller
     {
 ////        USING GATE FOR VALIDATION
 //        Gate::authorize('edit-story', $story);
+        $tags = Tag::get();
         return view('stories.edit', [
-            'story' => $story
+            'story' => $story,
+            'tags' => $tags
         ]);
     }
 
@@ -108,12 +115,13 @@ class StoriesController extends Controller
     public function update(StoryRequest $request, Story $story)
     {
         $story->update($request->all());
-
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $this->_uploadimage($request, $story);
         }
+        $story->tags()->sync( $request->tags);
 
-        event(new StoryEdited($story->title));
+//        event(new StoryEdited($story->title));
+
         return redirect()->route('stories.index')->with('msg', 'Story Updated Successfully!!');
     }
 
@@ -133,7 +141,7 @@ class StoriesController extends Controller
     {
         $image = $request->file('image');
         $filename = time() . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(255, 100)->save(public_path('storage/' . $filename));
+        Image::make($image)->resize(100, 60)->save(public_path('storage/' . $filename));
         $story->image = $filename;
         $story->save();
     }

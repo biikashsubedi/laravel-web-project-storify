@@ -18,14 +18,15 @@ class DashboardController extends Controller
         }
         $stories = $query->with('user')
             ->orderby('id', 'DESC')
-            ->paginate(11);
+            ->paginate(15);
         return view('dashboard.index', [
             'stories' => $stories
         ]);
     }
 
     public function show(Story $activestory){
-        return view('dashboard.show', [
+        return view('dashboard.show',
+
             'story'=>$activestory
         ]);
     }

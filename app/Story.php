@@ -20,6 +20,11 @@ class Story extends Model
         return $this->belongsTo(\App\User::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(\App\Tag::class);
+    }
+
     protected static function booted()
     {
 //        static::addGlobalScope('active', function (Builder $builder){
@@ -53,9 +58,9 @@ class Story extends Model
     public function getThumbnailAttribute()
     {
         if ($this->image) {
-            return assert('storage/' . $this->image);
+            return asset('storage/' . $this->image);
         }
-        return assert('storage/thumbnail.jog');
+        return asset('storage/thumbnail.jpg');
     }
 
 }

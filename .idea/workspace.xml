@@ -3,8 +3,46 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a353c4-e219-401e-8e6c-93591291e231" name="Default Changelist" comment="" />
+    <list default="true" id="76a353c4-e219-401e-8e6c-93591291e231" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_102452_create_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TagSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/storify2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/storify2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Story.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Story.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/stories/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/stories/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/stories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/stories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,15 +160,22 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fqcARss6V1oewLYvWb3j43K9JN" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -153,12 +198,27 @@
       <workItem from="1596948951669" duration="35621000" />
       <workItem from="1597132014524" duration="21470000" />
       <workItem from="1597213092553" duration="11382000" />
-      <workItem from="1597300393077" duration="7692000" />
+      <workItem from="1597300393077" duration="9924000" />
+      <workItem from="1597311534295" duration="14037000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="379" y="212" width="597" height="371" key="#Log_Highlighting_(ideolog)" timestamp="1597219420070">
@@ -169,6 +229,14 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="486" y="201" width="383" height="393" key="FileChooserDialogImpl/0.29.1366.739@0.29.1366.739" timestamp="1597308720938" />
+    <state x="565" y="315" width="522" height="262" key="Github.ShareDialog" timestamp="1597308887230">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="565" y="315" width="522" height="262" key="Github.ShareDialog/0.29.1366.739@0.29.1366.739" timestamp="1597308887230" />
+    <state x="454" y="118" width="448" height="559" key="Github.UntrackedFilesDialog" timestamp="1597308896371">
+      <screen x="0" y="29" width="1366" height="739" />
+    </state>
+    <state x="454" y="118" width="448" height="559" key="Github.UntrackedFilesDialog/0.29.1366.739@0.29.1366.739" timestamp="1597308896371" />
     <state x="374" y="152" width="608" height="490" key="NewPhpClassDialog" timestamp="1596988712171">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
@@ -181,9 +249,9 @@
       <screen x="0" y="29" width="1366" height="739" />
     </state>
     <state x="430" y="179" key="run.anything.popup/0.29.1366.739@0.29.1366.739" timestamp="1596982922585" />
-    <state x="429" y="189" width="505" height="399" key="search.everywhere.popup" timestamp="1597305520690">
+    <state x="429" y="189" width="505" height="399" key="search.everywhere.popup" timestamp="1597324828343">
       <screen x="0" y="29" width="1366" height="739" />
     </state>
-    <state x="429" y="189" width="505" height="399" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1597305520690" />
+    <state x="429" y="189" width="505" height="399" key="search.everywhere.popup/0.29.1366.739@0.29.1366.739" timestamp="1597324828343" />
   </component>
 </project>

@@ -13,6 +13,7 @@
                             <tr>
                                 <th>Image</th>
                                 <th>Title</th>
+{{--                                <th>Tags</th>--}}
                                 <th>Type</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -23,6 +24,11 @@
                                 <tr>
                                     <td><img src="{{$story->thumbnail}}" alt="image"></td>
                                     <td>{{$story->title}}</td>
+{{--                                    <td>--}}
+{{--                                        @foreach($$story->$tags as $tag)--}}
+{{--                                            {{$tag->name}}--}}
+{{--                                        @endforeach--}}
+{{--                                    </td>--}}
                                     <td>{{$story->type}}</td>
                                     <td>{{$story->status == 1 ? 'yes':'No'}}</td>
                                     <td>

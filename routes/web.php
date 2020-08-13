@@ -38,6 +38,11 @@ Route::namespace('Admin')->middleware(['auth', CheckAdmin::class])->prefix('admi
 });
 
 Route::get('/image', function (){
+    $imagePath = public_path('storage/test.jpg');
+    $writePath = public_path('storage/thumbnail.jpg');
 
+    $img = Image::make($imagePath)->resize(100, 60);
+    $img->save($writePath);
+    return $img->response('jpg');
 });
 

@@ -19,19 +19,34 @@
     </span>
     @enderror
 </div>
+{{--<div class="form-group">--}}
+{{--    <label for="type" class="font-weight-bold">Type:</label>--}}
+{{--    <select name="type" id="" class="form-control @error('type') is-invalid @enderror">--}}
+{{--        <option value="">--Select--</option>--}}
+{{--        <option value="short" {{'short' == old('type', $story->type) ? 'selected':''}}>Short</option>--}}
+{{--        <option value="long" {{'long' == old('type', $story->type) ? 'selected':''}}>Long</option>--}}
+{{--    </select>--}}
+{{--    @error('type')--}}
+{{--    <span class="invalid-feedback" role="alert">--}}
+{{--        {{$message}}--}}
+{{--    </span>--}}
+{{--    @enderror--}}
+{{--</div>--}}
+
 <div class="form-group">
-    <label for="type" class="font-weight-bold">Type:</label>
-    <select name="type" id="" class="form-control @error('type') is-invalid @enderror">
+    <label for="type">Type</label>
+    <select name="type" class="form-control @error('type') is-invalid @enderror">
         <option value="">--Select--</option>
-        <option value="short" {{'short' == old('type', $story->type) ? 'selected':''}}>Short</option>
-        <option value="long" {{'long' == old('type', $story->type) ? 'selected':''}}>Long</option>
+        <option value="short" {{ 'short' == old('type', $story->type) ? 'selected' : '' }}>Short</option>
+        <option value="long" {{ 'long' == old('type', $story->type) ? 'selected' : '' }}>Long</option>
     </select>
     @error('type')
     <span class="invalid-feedback" role="alert">
-        {{$message}}
+        <strong>{{ $message }} </strong>
     </span>
     @enderror
 </div>
+
 <div class="form-group">
     <legend><h6 class="font-weight-bold">Status:</h6></legend>
     <div class="form-check @error('status') is-invalid @enderror">
@@ -60,4 +75,16 @@
         <strong>{{$message}}</strong>
     </span>
     @enderror
+    <img src="{{$story->thumbnail}}" onresize="" alt="image">
+</div>
+
+<div class="form-group">
+    @foreach( $tags as $tag)
+        <div class="form-check form-check-inline">
+            <input name="tags[]" class="form-check-input" type="checkbox" value="{{$tag->id}}"
+                {{ in_array( $tag->id, old('tags', $story->tags->pluck('id')->toArray()) ) ? 'checked' : "" }}
+            >
+            <label class="form-check-label">{{ $tag->name}}</label>
+        </div>
+    @endforeach
 </div>
